@@ -3,7 +3,7 @@
 <!doctype html>
 <html>
     <head>
-        <h1>hey</h1>
+        
         <meta charset="utf-8">
         <title>Transparent Login Form</title>
         <link rel="stylesheet" href="style1.css">
