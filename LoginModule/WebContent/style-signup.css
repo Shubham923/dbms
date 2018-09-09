@@ -11,7 +11,7 @@ body{
 }
 
 header{
-	background-image: url('5.jpg');
+	background-image: url('4.jpg');
 	background-size:cover;
 	height:100vh ;
 	background-repeat: no-repeat;
@@ -19,7 +19,55 @@ header{
 }
 
 
+
+
+ul {
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+    color: white;
+    overflow: hidden;
+    /*background-color: #333;*/
+    position: -webkit-sticky; /* Safari */
+    position: sticky;
+    top: 0;
+}
+
+.logo
+{
+	height: 80px;
+	float: left;
+}
+
+
+li {
+    float: right;
+}
+
+li a {
+    display: block;
+    color: white;
+    text-align: center;
+    padding: 14px 16px;
+    text-decoration: none;
+}
+
+li a:hover {
+    background-color: #111;
+}
+
+.active {
+    background-color: #4CAF50;
+}
+
+.rowflix{
+
+	color: black;
+	padding: 15px;
+}
+
 .box{
+
 	font-family: fira sans;
 	border: none;
 	position: absolute;
@@ -27,7 +75,7 @@ header{
 	color: white;
 	left: 50%;
 	transform: translate(-50%, -50%);
-	width: 400px;
+	width: 450px;
 	padding:40px;
 	background:rgba(0,0,0,0.8);
 	box-sizing: border-box;
