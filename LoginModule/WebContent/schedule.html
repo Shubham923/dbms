@@ -1,3 +1,5 @@
+
+<%@page import="java.sql.*"%>
 <!DOCTYPE html>
 <html xmlns="http://www.w3.org/1999/xhtml">
 <head>
@@ -7,11 +9,11 @@
     <meta name="author" content="" />
     <title>Schedule | Pune Metro</title>
     <!-- BOOTSTRAP CORE STYLE CSS -->
-    <link href="assets/css/bootstrap.css" rel="stylesheet" />
+    <link href="bootstrap.css" rel="stylesheet" />
     <!-- FONT AWESOME CSS -->
-<link href="assets/css/font-awesome.min.css" rel="stylesheet" />
+<link href="font-awesome.min.css" rel="stylesheet" />
      <!-- FLEXSLIDER CSS -->
-<link href="assets/css/flexslider.css" rel="stylesheet" />
+<link href="flexslider.css" rel="stylesheet" />
     <!-- CUSTOM STYLE CSS -->
     <link href="style.css" rel="stylesheet" />    
   <!-- Google	Fonts -->
@@ -122,11 +124,70 @@
              <div class="row text-center">
                  <div class="col-lg-8 col-lg-offset-2 col-md-8 col-sm-8 col-md-offset-2 col-sm-offset-2">
                      <h1 data-scroll-reveal="enter from the bottom after 0.2s"  class="header-line">SCHEDULE OF METRO</h1>
-                     <p data-scroll-reveal="enter from the bottom after 0.3s" >THIS IS SCHEDULE SECTION
-                     <br>
-
-
-
+                     <p data-scroll-reveal="enter from the bottom after 0.3s" >    
+                     <h4>Metros are scheduled with a frequency of 10 min.</h4>
+                     <h4>Following table gives  daily starting time for all stations.</h4>
+     <%
+        
+        String query="select name,start_up,start_down from schedule,Metro_Station where Metro_Station.st_id=schedule.st_id and lineno=1";
+    	String url="jdbc:mysql://localhost:3306/Metro";
+    	String username="root";
+    	String pass="root";
+    	Class.forName("com.mysql.jdbc.Driver");
+		Connection con=DriverManager.getConnection(url, username, pass);
+		PreparedStatement st=con.prepareStatement(query);
+		
+		ResultSet rs=st.executeQuery();%>
+				 <br>
+ <h3 data-scroll-reveal="enter from the bottom after 0.2s"  class="header-line">Line 1</h3>
+		<table align="center">
+				<tr><th>Station Name</th>			<th>To Swargate</th>						<th>To PCMC</th><tr>
+			
+ 		
+		<%while(rs.next())
+        {
+        	
+        %>
+        
+          
+          		<tr>
+				<td><%=rs.getString(1)%></td>      <td><%=rs.getTime(2)+" AM"%></td>		<td><%=rs.getTime(3)+" AM"%></td>
+          		</tr>
+          
+          <%
+          
+        }
+          %>
+		          </table><br><br>
+		
+	     <%
+        
+         query="select name,start_up,start_down from schedule,Metro_Station where Metro_Station.st_id=schedule.st_id and lineno=2";
+    	 st=con.prepareStatement(query);
+		 rs=st.executeQuery();%>
+		 <br>
+	 <h3 data-scroll-reveal="enter from the bottom after 0.2s"  class="header-line">Line 1</h3>
+		<table align="center">
+				
+				<tr><th>Station Name</th>			<th>To Ramwadi</th>						<th>To Vanaz</th><tr>
+			
+ 		
+		<%while(rs.next())
+        {
+        	
+        %>
+        
+          
+          		<tr>
+				<td><%=rs.getString(1)%></td>      <td><%=rs.getTime(2)+" AM"%></td>		<td><%=rs.getTime(3)+" AM"%></td>
+          		</tr>
+          
+          <%
+          
+        }
+          %>
+		          </table>
+		<br><br>
                      <!--WRITE YOUR CODE HERE -->
 
 
