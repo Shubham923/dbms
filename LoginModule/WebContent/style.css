@@ -1,4 +1,4 @@
-﻿/*=============================================================
+/*=============================================================
     Authour URI: www.binarytheme.com
     License: Commons Attribution 3.0
 
@@ -336,4 +336,23 @@ li{
     width: 490px;
     padding-left: 100px; 
     height:350px;
+}
+table,tr,td{
+    width:650px;
+    background-color:#B0C4DE;
+    border:3px solid white;
+    border-collapse: collapse;
+	padding-top:5px;
+	padding-bottom:5px;    
+	text-aling:center;
+}
+th{
+    width:650px;
+    background-color:#D3D3D3;
+    border:3px solid white;
+    border-collapse: collapse;
+	padding-top:5px;
+	padding-bottom:5px;    
+	text-align:center;
+	font-weight:bold;
 }
